@@ -5,6 +5,11 @@ public class Mano {
 	
 	private List<Carta>mano;
 
+	public Mano(List<Carta> mano) {
+		super();
+		this.mano = mano;
+	}
+
 	public List<Carta> getMano() {
 		return mano;
 	}
