@@ -6,7 +6,10 @@ public class Poker {
 	
 	private List<Carta> cartas = new ArrayList<Carta>();
 	
-	
+	public Poker() {
+		super();
+	}
+
 	public Poker(List<Carta> cartas) {
 		super();
 		this.cartas = cartas;
@@ -24,7 +27,7 @@ public class Poker {
 
 	
 	
-public int verificarpar(List<Carta> cartas) {
+public int verificarPar(List<Carta> cartas ) {
 	Collections.sort(cartas);
 	int esPar = 0;
 	for(int i=1; i<cartas.size(); i++) {
@@ -36,7 +39,7 @@ public int verificarpar(List<Carta> cartas) {
 }
 
 
-public Carta crataAlta(List<Carta>cartas) {	
+public Carta cartaAlta(List<Carta>cartas) {	
 	return Collections.max(cartas);	
 }
 

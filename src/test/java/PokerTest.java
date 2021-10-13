@@ -27,14 +27,14 @@ class PokerTest {
         black.add(new Carta(valorEnum.OCHO, paloEnum.TREBOL));
         black.add(new Carta(valorEnum.AS, paloEnum.CORAZONES));
 
-        poker blanco = new poker(white);
-        Poker negro = new poker(black);
+        Poker blanco = new Poker(white);
+        Poker negro = new Poker(black);
 
 
 
 
-        ManosPokerImpl manosPoker = new ManosPokerImpl();
-        final String actual = manosPoker.cartaAlta(player1, player2);
+        Poker poker = new Poker();
+        final String actual = Poker.verificarpar(blanco, negro);
 
         final String expected = "(Negro)Jugador 2 gana por carta alta";
         System.out.println("expected***"+expected+" actual***"+actual);
