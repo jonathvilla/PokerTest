@@ -1,20 +1,20 @@
 
 public enum paloEnum {
 
-	CORAZONES("C"), TREBOL("H"), DIAMANTES("D"), ESPADAS("S");
+	TREBOL(1), CORAZONES(2), DIAMANTES(3), ESPADAS(4);
 	
-	private String palo;
+	private int palo;
 	
-	private paloEnum(String palo) {
+	private paloEnum(int palo) {
 		this.palo = palo;
 		
 	}
 
-	public String getPalo() {
+	public int getPalo() {
 		return palo;
 	}
 
-	public void setPalo(String palo) {
+	public void setPalo(int palo) {
 		this.palo = palo;
 	}
 	

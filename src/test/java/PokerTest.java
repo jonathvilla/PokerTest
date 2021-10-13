@@ -1,13 +1,44 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 
 class PokerTest {
     @DisplayName("Blanco: 2H 3D 5S 9C KD  Negro: 2C 3H 4S 8C AH Negro gana. - con la carta alta: As ")
     @Test
     void testCartaAlta() {
-        fail("no implementado");
+
+        
+        List<Carta> white= new ArrayList<Carta>();
+    	white.add(new Carta(valorEnum.DOS, paloEnum.CORAZONES));
+        white.add(new Carta(valorEnum.TRES, paloEnum.DIAMANTES));
+        white.add(new Carta(valorEnum.CINCO, paloEnum.ESPADAS));
+        white.add(new Carta(valorEnum.NUEVE, paloEnum.TREBOL));
+        white.add(new Carta(valorEnum.K, paloEnum.DIAMANTES));
+
+        List<Carta> black= new ArrayList<Carta>();
+        black.add(new Carta(valorEnum.DOS, paloEnum.TREBOL));
+        black.add(new Carta(valorEnum.TRES, paloEnum.CORAZONES));
+        black.add(new Carta(valorEnum.CUATRO, paloEnum.ESPADAS));
+        black.add(new Carta(valorEnum.OCHO, paloEnum.TREBOL));
+        black.add(new Carta(valorEnum.AS, paloEnum.CORAZONES));
+
+        poker blanco = new poker(white);
+        Poker negro = new poker(black);
+
+
+
+
+        ManosPokerImpl manosPoker = new ManosPokerImpl();
+        final String actual = manosPoker.cartaAlta(player1, player2);
+
+        final String expected = "(Negro)Jugador 2 gana por carta alta";
+        System.out.println("expected***"+expected+" actual***"+actual);
+        assertEquals(expected, actual);
     }
 
     @DisplayName("Blanco: 2H 3D 5S 9C KD  Negro: 2C 3H 4S 8C 2C Blanco gana. - con la carta alta: Rey ")
