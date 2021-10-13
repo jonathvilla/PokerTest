@@ -27,6 +27,8 @@ class PokerTest {
         black.add(new Carta(valorEnum.OCHO, paloEnum.TREBOL));
         black.add(new Carta(valorEnum.AS, paloEnum.CORAZONES));
 
+
+        
         Poker blanco = new Poker(white);
         Poker negro = new Poker(black);
 
