@@ -4,25 +4,45 @@ import java.util.List;
 
 public class Poker {
 	
-	private List<Carta> cartas = new ArrayList<Carta>();
+	private List<Jugador> jugador = new ArrayList<Jugador>();
 	
 	public Poker() {
 		super();
 	}
 
-	public Poker(List<Carta> cartas) {
-		super();
-		this.cartas = cartas;
-	}
-	
-	public List<Carta> getCartas() {
-		return cartas;
+
+	public List<Jugador> getJugador() {
+		return jugador;
 	}
 
-	public void setCartas(List<Carta> cartas) {
-		this.cartas = cartas;
+	public void setJugador(List<Jugador> jugador) { 
+		this.jugador = jugador;
 	}
 	
+	public String ganador() {
+		
+	    List<Carta>cartaM = null;
+		Jugador jugador =null;
+		
+		Boolean manoGanadora = null;
+		
+        cartaM = jugador.getMano();
+		
+		Collections.sort(jugador.getMano());
+		
+		for(int i=0; i<=4; i++) {
+			if(jugador.getMano().get(i).getValor().getValorNumero() > cartaM.get(i).getValor().getValorNumero()){
+				
+				manoGanadora = true;
+			}
+			else {
+				manoGanadora = false;
+				break;
+			}
+		}
+		
+		return jugador.getGanador();
+	}
 	
 
 	
